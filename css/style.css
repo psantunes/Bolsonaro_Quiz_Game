@@ -1,0 +1,164 @@
+/* https://coolors.co/363f31-7d9361-bec48b-646636-483d03 */
+
+* {
+    text-align: center;
+}
+html, body {
+    height:100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+h1 {
+    font-size: 2.3rem;
+}
+a, a:visited {
+    color: #7D9361;
+    text-decoration: underline;
+}
+article {
+    flex: 1 0 auto;
+}
+section {
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+header {
+    background-color: #483D03;
+    padding: 12px 0;
+    margin: 0 0 20px 0;
+}
+header  h1 {
+    color: #fff;
+}
+header img {
+    border: 1px solid #fff;
+}
+footer {
+    flex-shrink: 0;
+    background-color: #483D03;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    bottom: 0;
+}
+footer p {
+    color: #fff;
+    font-size: 80%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+footer > .container a, footer > .container a:visited {
+    color: #fff;
+}
+ul {
+    margin: auto;
+    width:300px; 
+    list-style: none;
+}
+ul li {
+    margin: 0px;
+    padding: 5px 10px;
+    display: inline-block;
+    width: 45px; 
+    height: 15px;
+}
+small {
+    font-size:65%;
+}
+figcaption {
+    font-size:90%;
+    text-align: right;
+    margin-right: 2px;
+}
+#nav {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.card {
+    border: 1px solid #BEC48B;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+.card-header{
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.card-footer {
+    background-color: #BEC48B;
+}
+.resposta {
+    background-color: #363F31;
+    color: #ffffff;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.red {
+    background-color:#BEC48B;
+}
+.green {
+    background-color:#7D9361;
+}
+.no-marginLR {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.no-padding {
+    padding: 0px !important;
+}
+.tweet {
+    display: flex;
+    justify-content: center;
+}
+/** código CSS de https://codepen.io/JiveDig/pen/jbdJXR **/
+.switch-field {
+    display: flex;
+    justify-content: center;
+	margin-bottom: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 16px;
+	line-height: 1;
+	text-align: center;
+    padding: 8px 16px;
+	margin: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	width: 120px;
+
+}
+
+.switch-field label:hover {
+    cursor: pointer;
+    background-color: #7D9361;
+    color: #ffffff;
+}
+
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}

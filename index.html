@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58848711-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-58848711-1');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bolsonaro: verdadeiro ou falso? - Quiz Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="description" content="Você consegue identificar o que é fato e o que é falso nas declarações do presidente? Newsgame de perguntas e respostas baseado em fact-checking.">
+    <meta name="twitter:card"         value="summary" />
+	<meta name="twitter:creator" content="@psantunes" />
+    <meta property="og:url"           content="https://jornalismodigital.jor.br/quizgame" />
+    <meta property="og:type"          content="article" />
+    <meta property="og:title"         content="Bolsonaro: verdadeiro ou falso? - Quiz" />
+    <meta property="og:description"   content="Teste seus conhecimentos sobre as declarações do presidente" />
+    <meta property="og:image"         content="https://jornalismodigital.jor.br/quizgame/img/card.jpg" />
+
+</head>
+
+
+<body>
+        <header>
+            <div class="row justify-content-md-center no-marginLR">
+                <div class="col-md-2 col-2 no-padding"><img src="img/bolsonaro01.png" class="float-right"></div>
+                <div class="col-md-4 col-8 no-padding"><h1>BOLSONARO:<br><small>verdadeiro ou falso?</small></h1></div>
+                <div class="col-md-2 col-2 no-padding"><img src="img/bolsonaro02.png" class="float-left"></div>
+            </div>
+       </header>
+
+
+
+    <article id="game">
+
+
+        <section v-show="area[0]" class="col-md-6 col-sm-12">
+
+            <div class="card">
+                <div class="card-body">
+                     <p>Desde 1º de janeiro de 2019, o Brasil vive uma situação inédita em sua história: tem um presidente que, mais do que qualquer um que o antecedeu,
+                    seguidamente emite opiniões ou divulga informações falsas ou imprecisas. A agência 
+                    <a href="https://aosfatos.org/todas-as-declara%C3%A7%C3%B5es-de-bolsonaro/">Aos Fatos</a> levantou que nos primeiros 337 dias de governo, Bolsonaro
+                    deu 522 declarações falsas ou distorcidas.</p>
+                    <p>Você é capaz diferenciar as declarações do presidente do Brasil baseadas em informações verídicas das imprecisas? Convidamos você para responder este quiz e verificar
+                    a sua capacidade de distinguir fatos de boatos. Responda <strong>verdadeiro</strong> se você acha que os dados apresentados pelo presidente estão
+                    corretos e <strong>falso</strong> se os dados são errados.</p>
+                    <button @click="inicia()">Começar</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section v-show="area[6]" class="col-md-8 col-sm-12">
+                <div class="card">
+                <div class="card-header resposta"><h4>Você acertou {{ acertos }} de 5 perguntas.</h4></div>
+                <template v-if="acertos==5">
+                    <div class="card-header resposta"><h3>Mito! </h3></div>
+                    <div class="card-body">
+                        <p>Você possui um espírito crítico aguçado e faro para desconfiar do discurso dos políticos. Isto é uma habilidade e também uma responsabilidade:
+                        é de você a missão de desmentir as fake news publicadas no WhatsApp da família. Contamos com você!</p>
+                    </div>
+                </template>
+                <template v-else-if="acertos==4">
+                    <div class="card-header resposta"><h3>Você acertou quatro questões (depois deu uma fraquejada).</h3></div>
+                    <div class="card-body">
+                        <p>Você procura estar sempre bem informado e tem um bom senso crítico: ainda assim pode, uma vez ou outra, cair na rede da desinformação. Fique
+                            atento: siga lendo bons sites e jornais, e, na dúvida, pesquise.</p>
+                    </div>
+                </template>
+                <template v-else-if="acertos==3 || acertos==2">
+                        <div class="card-header resposta"><h3>Tem que melhorar isso aí, talkei?</h3></div>
+                        <div class="card-body">
+                            <p>Você precisa qualificar suas fontes de informação – sair da bolha das redes sociais e prestar atenção no que está saindo na imprensa e no mundo ao redor. Vem aí uma nova eleição e você precisa estar bem informado para decidir em quem votar e não ser enganado.</p>
+                        </div>
+                </template>
+                <template v-else>
+                        <div class="card-header resposta"><h3>Você está na Ponta da Praia</h3></div>
+                        <div class="card-body">
+                            <p>Você dá combustível aos manipuladores, que ganham dinheiro ou votos gerando desinformação. Nem tudo o que o presidente diz é mentira, nem tudo o que
+                            o presidente diz é verdade. Questione. Você já foi usado no passado como massa de manobra, informe-se para que isto não aconteça novamente.</p>
+                        </div>
+                </template>
+                </div>
+            
+            <p>Veja a seguir as respostas corretas:</p>
+
+        </section>
+
+
+        <section v-show="area[1]" class="col-md-8 col-sm-12">
+
+            <div class="card">
+                <div class="card-header">
+                  Declaração 1
+                </div>
+                <figure>
+                    <img class="card-img-top" src="img/48787971558_95f875cb10_c.jpg" title="Foto: Alan Santos/Presidência da República" alt="Foto: Alan Santos/Presidência da República">
+                    <figcaption>Foto: Alan Santos/Presidência da República</figcation>
+                </figure>
+                    <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p>"Em 2013, um acordo entre o governo petista e a ditadura cubana trouxe ao Brasil 10 mil médicos sem nenhuma comprovação profissional.
+                        Foram impedidos de trazer cônjuges e filhos, tiveram 75% de seus salários confiscados pelo regime e foram impedidos de usufruir de
+                        direitos fundamentais, como o de ir e vir"</p>
+                    <p class="blockquote-footer">Discurso realizado em Nova York, na abertura dos debates gerais da 74ª Assembleia Geral das Nações Unidas (ONU), no dia 24 de setembro.</p>
+                  </blockquote>
+                </div>
+                <template v-if="jogando">
+                        <div class="card-footer">
+                            <p>Os dados da declaração acima são</p>
+
+                                <div class="switch-field">
+                                        <input id="radio1" type="radio" @click="grava1('v')"><br>
+                                        <label for="radio1"> Verdadeiros</label>
+                                        <input id="radio2" type="radio" @click="grava1('f')"><br>
+                                        <label for="radio2"> Falsos</label>
+                                </div>
+
+                        </div>
+                </template>
+                <template v-else>
+                    <div class="card-footer">
+                        <p>A declaração contém informações <strong>FALSAS</strong>. A Lei 12.873/2013, que instituiu no Brasil o
+                        programa Mais Médicos, exigiu a apresentação do diploma dos médicos cubanos. Também não é verdade que existisse qualquer restrição
+                        para a vinda dos cônjuges ou filhos dos  participantes do programa ao Brasil, segundo o 
+                        <a href="https://politica.estadao.com.br/blogs/estadao-verifica/checamos-o-discurso-de-bolsonaro-na-assembleia-geral-da-onu-veja-o-resultado/">Estadão</a>.
+                        De acordo com o <a href="https://gauchazh.clicrbs.com.br/geral/noticia/2018/11/ninguem-vem-de-la-enganado-diz-medico-cubano-que-trabalha-no-rs-cjokbkhcw0ee301rx4yd62g3x.html">jornal Zero Hora</a>,
+                        o governo de Cuba ficava com 70% do valor pago aos médicos que atuavam no Brasil – um médico entrevistado ainda assim destacou que os 30% restantes eram 10 vezes mais do que ele receberia no país caribenho.
+                       </p>
+                    </div>
+                </template>
+            </div>
+
+
+
+        </section>
+
+
+
+        <section v-show="area[2]" class="col-md-8 col-sm-12">
+                <div class="card">
+                        <div class="card-header">Declaração 2</div>
+                            <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 5px;">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/BWrampchwt0?start=22" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>“61% do nosso território é preservado”</p>
+                                    <p class="blockquote-footer">Ainda na ONU, Bolsonaro fez declaração acima para provar
+                                    que o Brasil faz a sua parte para a preservação do meio-ambiente. É possível
+                                    rever a fala no vídeo acima.</p>
+                                 </blockquote>
+                            </div>
+                            <template v-if="jogando">
+                                <div class="card-footer">
+                                <p>A informação acima é</p>
+                                    <div class="switch-field">
+                                            <input id="radio5" type="radio" @click="grava2('v')"><br>
+                                            <label for="radio5"> Verdadeira</label>
+                                            <input id="radio6" type="radio" @click="grava2('f')"><br>
+                                            <label for="radio6"> Falsa</label>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-else>
+                                <div class="card-footer">
+                                <p>A fala é <strong>VERDADEIRA</strong>. Estudos divulgados pela Embrapa e pela NASA, a agência espacial americana, apontam que cerca de 
+                                66% do território brasileiro está preservado. Já um estudo da Organização das Nações Unidas para Alimentação e
+                                Agricultura (FAO) de 2016 aponta que o Brasil preserva 58,9% de seu território em 2016. Os número são bem próximos
+                                aos divulgados por Bolsonaro. Ainda assim, há motivo para preocupação no horizonte, já que vários relatórios apontam
+                                para o avanço do desmatamento. As informações acima e outros trechos do discurso foram checados pela 
+                                <a href="https://piaui.folha.uol.com.br/lupa/2019/09/24/bolsonaro-onu/">Agência Lupa</a>. </p>
+                                </div>
+                            </template>
+                </div>
+        </section>
+
+        <section v-show="area[3]" class="col-md-8 col-sm-12">
+
+                <div class="card">
+                    <div class="card-header">Declaração 3</div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>“Veja a matança das baleias patrocinada pela Noruega.”</p>
+                            <p class="blockquote-footer">No dia 18 de agosto de 2019, para se defender das
+                                críticas referentes aos cortes dos repasses do Fundo Amazônia pela Noruega, Bolsonaro
+                                acusou o país nórdico de não ter propriedade para falar de proteção ambiental.
+                                A postagem no Twitter veio acompanhada de um
+                                    vídeo com imagens de baleias assassinadas.</p>
+                        </blockquote>
+    
+                        <div class="tweet"><blockquote class="twitter-tweet">
+                                <p lang="pt" dir="ltr">- Em torno de 40% do Fundo Amazônico vai para as... ONGs, refúgio de muitos
+                                    ambientalistas. Veja a matança das baleias patrocinada pela Noruega. <a
+                                        href="https://t.co/46hpQnHSJA">pic.twitter.com/46hpQnHSJA</a></p>&mdash; Jair M. Bolsonaro
+                                (@jairbolsonaro) <a
+                                    href="https://twitter.com/jairbolsonaro/status/1163242553837330432?ref_src=twsrc%5Etfw">August
+                                    19, 2019</a>
+                            </blockquote>
+                        </div>
+            
+        
+                    </div>
+                    <template v-if="jogando">
+                            <div class="card-footer">
+                                    <p>O vídeo apresentado pelo presidente neste contexto é</p>
+        
+                                        <div class="switch-field">
+                                                <input id="radio3" type="radio" @click="grava3('v')"><br>
+                                                <label for="radio3"> Verdadeiro</label>
+                                                <input id="radio4" type="radio" @click="grava3('f')"><br>
+                                                <label for="radio4"> Falso</label>
+                                        </div>
+        
+                            </div>
+                    </template>
+                    <template v-else>
+                            <div class="card-footer">
+                                    <p>O vídeo incorporado ao tweet de Bolsonaro é <strong>FALSO</strong>. As imagens compartilhadas não são da Noruega nem são de 2019.
+                                        O vídeo foi gravado pela ONG Sea Shepherd nas Ilhas Faroe, território da Dinamarca, em 2018. As imagens estão fora de contexto.
+                                    Sobre a postura da Noruega em questões ambientais: de fato o país é um dos pouco a ainda permite a caça comercial a baleias, apenas de uma única raça,
+                                    a minke, cuja caça, muito criticada por ambientalistas é feita em alto mar. Na edição de 2019 do <a href="https://www.sdgindex.org/">Sustainable Development Report</a>,
+                                    ranking de desenvolvimento sustentável
+                                    compilado por entidade ligada a ONU, a Noruega está em 8º lugar. O Brasil é o 57º.</p>
+                            </div>
+                    </template>   
+                </div>
+            </section>
+
+            <section v-show="area[4]" class="col-md-8 col-sm-12">
+                    <div class="card">
+                            <div class="card-header">Declaração 4</div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>“Poucas universidades têm pesquisa, e, dessas poucas, a grande parte está na iniciativa privada, como a Mackenzie em São Paulo”</p>
+                                        <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 5px;">
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/FSOAahACt_Y?start=412" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <p class="blockquote-footer">Em entrevista à rádio Jovem Pan, reproduzida também no Youtube, o presidente afirmou
+                                        que as universidades públicas produzem poucas pesquisas.</p>
+                                     </blockquote>
+                                </div>
+                                <template v-if="jogando">
+                                    <div class="card-footer">
+                                    <p>A informação acima é</p>
+        
+                                        <div class="switch-field">
+                                                <input id="radio7" type="radio" @click="grava4('v')"><br>
+                                                <label for="radio7"> Verdadeira</label>
+                                                <input id="radio8" type="radio" @click="grava4('f')"><br>
+                                                <label for="radio8"> Falsa</label>
+                                        </div>
+        
+                                    </div>
+                                </template>
+                                <template v-else>
+                                    <div class="card-footer">
+                                        <p>A declaração de Bolsonaro duramente criticada pela comunidade acadêmica por ser <strong>FALSA</strong>.
+                                        De acordo com a Clarivate Analytics, entre 2011 e 2016, foram publicados mais de 250.000 artigos de pesquisadores do Brasil na base de dados
+                                        Web of Science em todas as áreas do conhecimento, o que colocaria o país na 13ª posição na produção científica mundial. 
+                                        Deste total, mais de 95% das publicações vem universidades públicas federais ou estaduais. 
+                                        Em nota, a <a href="https://www.unifesp.br/reitoria/dci/noticias-anteriores-dci/item/3799-universidades-publicas-realizam-mais-de-95-da-ciencia-no-brasil">Unifesp</a> reuniu outros dados, que comprovam a importância das universidades públicas para o desenvolvimento científico. </p>
+                                    </div>
+                                </template>
+                        </div>
+            
+            </section>
+            <section v-show="area[5]" class="col-md-8 col-sm-12">
+                    <div class="card">
+                            <div class="card-header">Declaração 5</div>
+                            <figure>
+                                <img class="card-img-top" src="img/davos.jpg" alt="Foto: Christian Clavadetscher/World Economic Forum" title="Foto: Christian Clavadetscher/World Economic Forum">
+                                <figcaption>Foto: Christian Clavadetscher/World Economic Forum</figcation>
+                                </figure>
+                            <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>“A agricultura se faz presente em apenas 9% do nosso território e cresce graças a sua tecnologia e à competência do produtor rural. Menos de 20% do nosso solo é dedicado à pecuária”</p>
+                                        <p class="blockquote-footer">
+                                        O presidente fez sua estreia em viagens internacionais no dia 22 de janeiro de 2019,
+                                        com um descurso no Fórum Econômico Mundial, em Davos, na Suíça, destacando pontos fracos e fortes da economia
+                                        brasileira.
+                                     </blockquote>
+                                </div>
+                        <template v-if="jogando">
+                                <div class="card-footer">
+                                        <p>Os fatos acima são</p>
+            
+                                            <div class="switch-field">
+                                                    <input id="radio9" type="radio" @click="grava5('v')"><br>
+                                                    <label for="radio9"> Verdadeiros</label>
+                                                    <input id="radio0" type="radio" @click="grava5('f')"><br>
+                                                    <label for="radio0"> Falsos</label>
+                                            </div>
+                                    </div>
+                        </template>
+                        <template v-else>
+                                <div class="card-footer">
+                                <p>As duas informações são <strong>VERDADEIRAS.</strong> Pesquisas de 2017 apontavam que aproximadamente 8% da área do país
+                                era ocupada por produtores agrícola. Já o relatório <a href="http://abiec.siteoficial.ws/images/upload/sumario-pt-010217.pdf">Perfil da Pecuária no Brasil 2018</a>, da Apex, estima que as pastagens
+                                ocupam 19% do território. Os dados foram coletados pela <a href="https://aosfatos.org/noticias/em-davos-bolsonaro-cita-dados-errados-sobre-meio-ambiente-e-governo/">Agência Aos Fatos</a>.</p>
+
+                                </p>
+                            </div>
+                        </template>
+                    </div>
+            </section>
+
+
+            <div id="nav">
+                <ul>
+                    <li v-bind:class="l1"> </li>
+                    <li v-bind:class="l2"> </li>
+                    <li v-bind:class="l3"> </li>
+                    <li v-bind:class="l4"> </li>
+                    <li v-bind:class="l5"> </li>
+                </ul>
+            </div>
+
+            <p>Gostou de quiz? Acha que ele pode ajudar alguém desinformado? Compartilhe!</p>
+                        
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https://jornalismodigital.jor.br/quizgame&layout=button&size=small&appId=200751627181922&width=105&height=20" width="105" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      
+    </article>
+
+    <footer>
+        <p>Desenvolvido por <a href="https://jornalismodigital.jor.br/">Paulo Serpa Antunes</a>. Acesse o <a href="https://github.com/psantunes/bolsonaro_quiz_game">código-fonte</a>.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/scripts.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>
