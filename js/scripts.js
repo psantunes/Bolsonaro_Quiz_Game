@@ -4,7 +4,9 @@ new Vue({
     data: {
         area: [true,false,false,false,false,false,false],
         jogando: true,
-        contador: 0, //pode ser derrubado
+        video1: true,
+        video2: true,
+        tuite: true,
         acertos: 0,
         resp1: null,
         resp2: null,
@@ -15,13 +17,13 @@ new Vue({
         l2: 'red',       
         l3: 'red',        
         l4: 'red',
-        l5: 'red'        
+        l5: 'red',
     },
     methods: {
         inicia() {
                 Vue.set(this.area, 0, false)
                 Vue.set(this.area, 1, true)
-                },
+        },
         grava1(valor) {
             this.resp1 = valor
             if (valor == "f") {
@@ -38,6 +40,7 @@ new Vue({
                 this.acertos++
             }
             Vue.set(this.area, 2, false)
+            this.video1 = 'false'
             Vue.set(this.area, 3, true)
             this.l2 = 'green'
             window.scrollTo(0,0);
@@ -48,6 +51,7 @@ new Vue({
                 this.acertos++
             }
             Vue.set(this.area, 3, false)
+            this.tuite = 'false'
             Vue.set(this.area, 4, true)
             this.l3 = 'green'
             window.scrollTo(0,0);
@@ -58,6 +62,7 @@ new Vue({
                 this.acertos++
             }
             Vue.set(this.area, 4, false)
+            this.video2 = 'false'
             Vue.set(this.area, 5, true)
             this.l4 = 'green'
             window.scrollTo(0,0);
@@ -69,13 +74,16 @@ new Vue({
                 this.acertos++
             }
             this.l5 = 'green'
+            this.video1 = true
+            this.video2 = true
+            this.tuite = true
             Vue.set(this.area, 6, true)
             Vue.set(this.area, 1, true)
             Vue.set(this.area, 2, true)
             Vue.set(this.area, 3, true)
             Vue.set(this.area, 4, true)
             Vue.set(this.area, 5, true)
-            this.jogando=false;
+            this.jogando = false;
             window.scrollTo(0,0);
         },
     

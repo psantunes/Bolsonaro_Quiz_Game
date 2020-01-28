@@ -152,7 +152,7 @@
                 <div class="card">
                         <div class="card-header">Declaração 2</div>
                             <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 5px;">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/BWrampchwt0?start=22" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe v-if="video1 == true" width="560" height="315" src="https://www.youtube.com/embed/BWrampchwt0?start=22" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
@@ -199,17 +199,16 @@
                                 A postagem no Twitter veio acompanhada de um
                                     vídeo com imagens de baleias assassinadas.</p>
                         </blockquote>
-    
-                        <div class="tweet"><blockquote class="twitter-tweet">
-                                <p lang="pt" dir="ltr">- Em torno de 40% do Fundo Amazônico vai para as... ONGs, refúgio de muitos
-                                    ambientalistas. Veja a matança das baleias patrocinada pela Noruega. <a
-                                        href="https://t.co/46hpQnHSJA">pic.twitter.com/46hpQnHSJA</a></p>&mdash; Jair M. Bolsonaro
-                                (@jairbolsonaro) <a
-                                    href="https://twitter.com/jairbolsonaro/status/1163242553837330432?ref_src=twsrc%5Etfw">August
-                                    19, 2019</a>
-                            </blockquote>
-                        </div>
-            
+                        
+                            <div v-if="tuite == true" class="tweet"><blockquote class="twitter-tweet">
+                                    <p lang="pt" dir="ltr">- Em torno de 40% do Fundo Amazônico vai para as... ONGs, refúgio de muitos
+                                        ambientalistas. Veja a matança das baleias patrocinada pela Noruega. <a
+                                            href="https://t.co/46hpQnHSJA">pic.twitter.com/46hpQnHSJA</a></p>&mdash; Jair M. Bolsonaro
+                                    (@jairbolsonaro) <a
+                                        href="https://twitter.com/jairbolsonaro/status/1163242553837330432?ref_src=twsrc%5Etfw">August
+                                        19, 2019</a>
+                                </blockquote>
+                            </div>
         
                     </div>
                     <template v-if="jogando">
@@ -245,7 +244,7 @@
                                     <blockquote class="blockquote mb-0">
                                         <p>“Poucas universidades têm pesquisa, e, dessas poucas, a grande parte está na iniciativa privada, como a Mackenzie em São Paulo”</p>
                                         <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 5px;">
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/FSOAahACt_Y?start=412" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                <iframe v-if="video2 == true" width="560" height="315" src="https://www.youtube.com/embed/FSOAahACt_Y?start=412" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
                                         <p class="blockquote-footer">Em entrevista à rádio Jovem Pan, reproduzida também no Youtube, o presidente afirmou
                                         que as universidades públicas produzem poucas pesquisas.</p>
