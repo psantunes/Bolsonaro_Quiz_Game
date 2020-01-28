@@ -6,4 +6,4 @@ Apesar de ser um game simples, Bolsonaro – Fato ou Fake é um tipo de jogo que
 
 O quiz foi desenvolvido em HTML, CSS e Javascript, usando o framework VueJS.
 
-**Observação:** O arquivo Wiki_BolsonaroVerdadeiroouFalso.pdf, na raiz do projeto explica porque em alguns trechos do código se optou por usar v-if e em outros por v-show.
+**Observação:** O arquivo Wiki_BolsonaroVerdadeiroouFalso.pdf, na raiz do projeto explica, porque em alguns trechos do código se optou por usar v-if e em outros por v-show.
